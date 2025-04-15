@@ -1,0 +1,1167 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+
+* {
+	font-family: 'Cabin', sans-serif;
+	font-variation-settings: 'wght' 400, 'wdth' 100, 'slnt' 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+	font-variation-settings: 'wght' 700, 'wdth' 110, 'slnt' 0;
+  }
+
+.navbar {
+	position: fixed;
+	/* Фиксируем навигацию */
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1030;
+	/* Чтобы навигация была поверх других элементов */
+	background-color: rgba(0, 0, 0, 0.7) !important;
+	/* Полупрозрачный черный */
+	backdrop-filter: blur(8px);
+	/* Эффект размытия фона */
+	transition: background-color 0.3s ease;
+	/* Плавное изменение цвета */
+}
+
+.navbar-brand img {
+	width: 60px;
+	/* Установи нужный размер логотипа */
+	height: auto;
+	/* Сохраняет пропорции изображения */
+}
+
+/* Убираем стандартный отступ у body */
+body {
+	background-color: rgb(0, 0, 0);
+	color: #fff;
+}
+
+/* Стили для ссылок */
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 0.9);
+	transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	color: #fff;
+}
+
+/* Стиль для активной ссылки */
+.navbar-dark .navbar-nav .nav-link.active {
+	color: #fff;
+	font-weight: 500;
+}
+
+#consultation-button-salim{
+	background-color: #f0f0f0;
+	color: #000;
+}
+
+#consultation-button-salim:hover{
+	background-color: #2e0ca7;
+}
+
+/* Стили для кнопки гамбургера */
+.navbar-toggler {
+	border: none;
+}
+
+.navbar-toggler:focus {
+	box-shadow: none;
+}
+
+.navbar {
+	padding: 15px 0;
+	font-family: 'Michroma', sans-serif;
+	position: relative;
+}
+
+.navbar-brand {
+	position: static;
+	/* Возвращаем логотип в обычное положение */
+	transform: none;
+	margin-right: auto;
+	/* Логотип прижимается к левому краю */
+}
+
+.navbar-brand img {
+	height: 50px;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+	transform: scale(1.1);
+}
+
+.navbar-collapse {
+	position: absolute;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.navbar-nav {
+	font-size: 1.2rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	display: flex;
+	gap: 30px;
+	/* Равномерные отступы между пунктами */
+}
+
+.nav-link {
+	position: relative;
+	color: white !important;
+	transition: all 0.3s ease;
+	padding: 10px 0;
+}
+
+.nav-link:hover {
+	color: #ffc107 !important;
+	transform: translateY(-2px);
+}
+
+.nav-link.active {
+	color: #ffc107 !important;
+	font-weight: 600;
+}
+
+.nav-link::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: 5px;
+	left: 0;
+	background-color: #ffc107;
+	transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+	width: 100%;
+}
+
+/* Для мобильной версии */
+@media (max-width: 991.98px) {
+	.navbar-collapse {
+		position: static;
+		margin-top: 15px;
+	}
+
+	.navbar-nav {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.nav-link {
+		margin: 5px 0;
+	}
+}
+
+.navbar-toggler {
+	border-color: rgba(255, 255, 255, 0.5);
+	/* Белая граница с прозрачностью */
+}
+
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Для активного состояния */
+.navbar-toggler:focus {
+	box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+
+/* Сброс отступов и высота 100% */
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-x: hidden;
+	font-family: 'Arial', sans-serif;
+	color: white;
+}
+
+/* Навигация (полупрозрачная) */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	transition: all 0.3s ease;
+}
+
+.video-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Стили для видео */
+.fullscreen-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: cover;
+	transition: all 0.3s ease-in-out;  /* Плавный переход */
+}
+
+/* Затемнение видео */
+.video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+/* Контент поверх видео */
+.video-content {
+	position: relative;
+	z-index: 2;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 20px;
+}
+
+/* Основной контент после видео */
+.page-content {
+	min-height: 100vh;
+	background-color: #000;
+	padding: 80px 20px;
+	position: relative;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+	.fullscreen-video {
+		width: 100%;
+		height: auto;
+	}
+
+	.navbar {
+		backdrop-filter: none;
+	}
+}
+/* Индикатор скролла */
+.scroll-down {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-size: 30px;
+	animation: bounce 2s infinite;
+	z-index: 3;
+}
+
+@keyframes bounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0) translateX(-50%);
+	}
+
+	40% {
+		transform: translateY(-15px) translateX(-50%);
+	}
+
+	60% {
+		transform: translateY(-7px) translateX(-50%);
+	}
+}
+
+.video-container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Стилизация видео */
+.fullscreen-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: cover;
+	z-index: 0;
+}
+
+/* Легкое затемнение видео */
+.video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+/* Контейнер для текста */
+.text-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 1200px;
+	text-align: center;
+	z-index: 2;
+}
+
+/* Стили основного заголовка */
+.main-title {
+	font-size: 4vw;
+	font-weight: 700;
+	margin-bottom: 2vh;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+	line-height: 1.2;
+}
+
+/* Стили подзаголовка */
+.subtitle {
+	font-size: 2vw;
+	font-weight: 300;
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+	line-height: 1.5;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+	.main-title {
+		font-size: 8vw;
+	}
+
+	.subtitle {
+		font-size: 4vw;
+	}
+
+	.fullscreen-video {
+		width: auto;
+		height: 100%;
+	}
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 40px;
+	flex-wrap: wrap;
+}
+
+.profile-photo {
+	width: 250px;
+	margin-right: 30px;
+	flex-shrink: 0;
+}
+
+.profile-photo img {
+	width: 100%;
+	height: auto;
+	border-radius: 16px;
+	object-fit: cover;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.profile-title {
+	font-size: 2em;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.question {
+	font-weight: bold;
+	font-size: 2.0em;
+	margin-right: 30px;
+	width: 200px;
+	color: #fff;
+	/* Ширина для вопроса */
+}
+
+.answer {
+	font-size: 1.3em;
+	max-width: 800px;
+	color: #fff;
+	/* Максимальная ширина для ответа */
+	text-align: justify;
+	/* Выравнивание текста */
+}
+
+@media (max-width: 1024px) {
+	.container {
+		margin: 30px;
+	}
+
+	.question {
+		font-size: 2.2em;
+		width: 180px;
+		color: #fff;
+	}
+
+	.answer {
+		font-size: 1.6em;
+		color: #fff;
+	}
+}
+
+/* Стили для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		/* Меняем направление на колонку */
+		margin: 20px 15px;
+		/* Уменьшаем отступы */
+		align-items: center;
+		/* Центрируем элементы */
+	}
+
+	.question {
+		width: 100%;
+		/* Занимает всю ширину */
+		text-align: center;
+		/* Центрируем заголовок */
+		margin-right: 0;
+		margin-bottom: 20px;
+		/* Отступ снизу */
+		color: #fff;
+		font-size: 2em;
+	}
+
+	.answer {
+		font-size: 1.4em;
+		text-align: left;
+		/* Выравниваем по левому краю */
+		max-width: 100%;
+		/* Занимает всю ширину */
+		padding: 0 10px;
+		/* Небольшие отступы по бокам */
+	}
+
+	.answer p {
+		margin-bottom: 15px;
+		color: #fff;
+	}
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 480px) {
+	.question {
+		font-size: 1.8em;
+		color: #fff;
+	}
+
+	.answer {
+		font-size: 1.2em;
+		color: #fff;
+	}
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+.whatsapp-btn {
+	position: fixed;
+	bottom: 20px;
+	/* Отступ от низа */
+	right: 20px;
+	/* Отступ от правого края */
+	display: flex;
+	align-items: center;
+	background-color: #25d366;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 50px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-size: 16px;
+	z-index: 100;
+	/* Чтобы кнопка была поверх других элементов */
+	transition: background-color 0.3s;
+}
+
+/* Иконка WhatsApp */
+.whatsapp-icon {
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+}
+
+/* Эффект при наведении */
+.whatsapp-btn:hover {
+	background-color: #128c7e;
+}
+
+.contact-page {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 100px 50px 50px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.contact-title {
+	color: #fff;
+	position: absolute;
+	top: 120px;
+	left: 50px;
+	font-size: 48px;
+	font-weight: bold;
+}
+
+
+.contact-info {
+	color: #fff;
+	position: static;
+	/* или просто удали вообще 'position' */
+	margin: 0 auto;
+	text-align: center;
+	font-size: 20px;
+	line-height: 1.6;
+	padding-top: 40px;
+}
+
+
+.footer-nav {
+	background-color: white;
+	padding: 30px;
+	height: 250px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: auto;
+	color: black;
+}
+
+.footer-title {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.footer-contacts {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	gap: 10px;
+	font-size: 18px;
+}
+
+.projects-section {
+	margin-top: 50px;
+	padding: 60px 5%;
+	background-color: #000000;
+}
+
+.projects-section h2 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 50px;
+	color: #ffffff;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.project-card {
+	background: rgb(0, 0, 0);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s;
+}
+
+.project-card:hover {
+	transform: translateY(-10px);
+}
+
+.project-preview {
+	position: relative;
+	cursor: pointer;
+}
+
+.project-image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 15px;
+}
+
+.view-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.project-preview:hover .view-btn {
+	opacity: 1;
+}
+
+.project-video {
+    position: fixed;
+	margin-top: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.project-video#local-video {
+	margin-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    z-index: 9999;
+}
+
+.youtube-thumbnail {
+    position: relative;
+    display: block;
+    margin-bottom: 10px; /* отступ снизу */
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.project-title h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.project-video iframe {
+    width: 100%;
+    height: 315px; /* можно изменить на свой размер */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование */
+    text-align: center;
+    padding: 10px;
+}
+
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-video .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+	padding-top: 60px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.video-player {
+	width: 90%;
+	/* Ширина плеера */
+	max-width: 1200px;
+	/* Максимальная ширина */
+	height: auto;
+	max-height: 80vh;
+	/* Максимальная высота */
+	outline: none;
+	border-radius: 8px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-video .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.project-card h3 {
+	text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #535151;
+    margin-top: 12px;
+    padding: 0 8px;
+    line-height: 1.4;
+	font-weight: bold;
+}
+
+.project-title h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.project-video iframe {
+    width: 100%;
+    height: 315px; /* можно изменить на свой размер */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование */
+    text-align: center;
+    padding: 10px;
+}
+
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-video .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+	padding-top: 60px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.video-player {
+	width: 90%;
+	/* Ширина плеера */
+	max-width: 1200px;
+	/* Максимальная ширина */
+	height: auto;
+	max-height: 80vh;
+	/* Максимальная высота */
+	outline: none;
+	border-radius: 8px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-video .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.project-card h3 {
+	text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #535151;
+    margin-top: 12px;
+    padding: 0 8px;
+    line-height: 1.4;
+	font-weight: bold;
+}
+
+.client-scroller {
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
+}
+
+.clients-section h2 {
+	font-size: 2rem;
+	color: #fff;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.client-track {
+	display: inline-block;
+	animation: scroll 7s linear infinite;
+}
+
+.client-name {
+	color: white;
+	font-size: 1rem;
+	margin-top: 10px;
+}
+
+.client-logo {
+	display: inline-block;
+	margin: 0 40px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.client-logo img {
+	max-height: 200px;
+	max-width: 350px;
+}
+
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.photo-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 100px;
+	/* расстояние между фото */
+	padding: 20px;
+	/* отступы от краёв */
+	max-width: 1200px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	/* чтобы padding не ломал ширину */
+}
+
+.photo-grid img {
+	width: 100%;
+	height: auto;
+	border-radius: 16px;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+	.photo-grid {
+		grid-template-columns: 1fr;
+		/* одно фото в ряду */
+		gap: 20px;
+		/* можно уменьшить расстояние между фото */
+		padding: 16px;
+		/* чуть меньше отступ */
+	}
+}
+
+.consultation {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	gap: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.consultation-image img {
+	max-width: 400px;
+	width: 100%;
+	border-radius: 16px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	object-fit: cover;
+}
+
+.consultation-content {
+	max-width: 500px;
+	color: #fff;
+	text-align: center;
+}
+
+.consultation-content h2 {
+	font-size: 2.5rem;
+	margin-bottom: 16px;
+}
+
+.consultation-content p {
+	font-size: 1.5rem;
+	margin-bottom: 24px;
+	line-height: 1.5;
+	color: #4b4b4b;
+}
+
+.consultation-button {
+	display: inline-block;
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+	padding: 10px 70px;
+	border-radius: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 1.2rem;
+	text-align: center;
+	margin-top: 20px;
+	transition: background-color 0.3s ease;
+}
+
+.consultation-button:hover {
+	background-color: #3f3f3f;
+}
+
+.footer {
+	background-color: #000000;
+	/* Темный фон футера */
+	color: #fff;
+	/* Белый текст */
+	padding: 20px 0;
+	/* Отступы сверху и снизу */
+	width: 100%;
+	/* Ширина на всю страницу */
+	position: relative;
+	bottom: 0;
+	left: 500px;
+	text-align: center;
+	/* Центрируем текст */
+}
+
+.footer .container {
+	max-width: 1200px;
+	/* Можно задать максимальную ширину */
+	margin: 0 auto;
+	/* Центрируем контейнер */
+	padding: 0 15px;
+	/* Немного отступов по бокам */
+}
+
+@media (max-width: 768px) {
+	.footer {
+		left: 0px;
+		color: #777;
+		/* Серый цвет текста на мобильных устройствах */
+	}
+}
+
+.custom-footer {
+	background-color: #ffffff;
+	color: #000000;
+	margin: 40px 20px;
+	border-radius: 20px;
+	padding: 60px 20px 20px 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer-content h3 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.consultation-button {
+	display: inline-block;
+	background-color: #000000;
+	color: #ffffff;
+	padding: 14px 28px;
+	border-radius: 10px;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 20px 0;
+	transition: background-color 0.3s ease;
+}
+
+.consultation-button:hover {
+	background-color: #333333;
+}
+
+@media (max-width: 768px) {
+	.consultation-button {
+		background-color: #ffffff;
+		color: #000000;
+		/* черный текст на белом фоне */
+	}
+
+	.consultation-button:hover {
+		background-color: #f0f0f0;
+		/* светлый серый оттенок при наведении */
+	}
+}
+
+.social-links {
+	margin-top: 20px;
+}
+
+.social-links a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: #000000;
+	font-weight: 500;
+	transition: color 0.3s;
+}
+
+.social-links a:hover {
+	color: #888888;
+}
+
+.footer-bottom {
+	margin-top: 40px;
+	font-size: 0.9rem;
+	color: #666666;
+}
+
+.youtube-player {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+/* Превью с изображением */
+.youtube-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Соотношение 16:9 */
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Картинка-превью */
+.youtube-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Кнопка play */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button::before {
+    content: '►';
+    font-size: 36px;
+    color: #fff;
+}
+
+/* Стили для видео */
+.youtube-player iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* При клике скрываем превью и показываем iframe */
+.youtube-player iframe {
+    display: block;
+}
+
+/* Мелкие улучшения */
+.youtube-player:hover .play-button {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.project-title {
+    text-align: center;
+    margin-top: 10px; /* Расстояние между превью и текстом */
+}
+
+.project-title h3 {
+    font-size: 18px;
+    color: #717070;
+    margin: 0;
+    font-weight: bold;
+}
