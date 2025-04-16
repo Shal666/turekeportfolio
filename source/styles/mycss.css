@@ -608,12 +608,11 @@ p {
 .projects-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: 30px;
+	gap: 45px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-/* Фиксируем размеры карточки */
 .project-card {
 	background: rgb(0, 0, 0);
 	border-radius: 10px;
@@ -621,28 +620,28 @@ p {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease;
 	height: 300px;
-	/* Фиксированная высота */
 	position: relative;
-	/* Для абсолютного позиционирования детей */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 10px;
 }
 
-/* Плавное увеличение без сдвигов */
 .project-card:hover {
 	transform: scale(1.03);
-	/* Заменяем translateY на scale */
 	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Контейнер превью */
 .project-preview {
 	position: relative;
 	width: 100%;
 	height: 200px;
-	/* Фиксированная высота */
 	overflow: hidden;
+	will-change: transform;
+	backface-visibility: hidden;
 }
 
-/* Изображение превью */
 .project-image {
 	width: 100%;
 	height: 100%;
@@ -655,33 +654,29 @@ p {
 	transform: scale(1.05);
 }
 
-/* Кнопка просмотра */
-.view-btn {
+.youtube-thumbnail {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.play-button {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 12px 24px;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-	border: none;
-	border-radius: 30px;
-	font-size: 1rem;
-	cursor: pointer;
-	opacity: 0;
-	transition: opacity 0.3s, transform 0.3s;
-	z-index: 10;
-	pointer-events: auto;
-	/* Разрешаем клики */
-	white-space: nowrap;
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
 }
 
-.project-preview:hover .view-btn {
-	opacity: 1;
-	transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Контейнер видео */
 .project-video {
 	position: fixed;
 	top: 50%;
@@ -698,15 +693,13 @@ p {
 	box-sizing: border-box;
 }
 
-/* Видео внутри контейнера */
-.project-video video {
+.project-video iframe {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
 	border-radius: 8px;
+	border: none;
 }
 
-/* Кнопка закрытия */
 .close-btn {
 	position: absolute;
 	top: 20px;
@@ -727,162 +720,15 @@ p {
 	background: rgba(255, 255, 255, 0.2);
 }
 
-.youtube-thumbnail {
-	position: relative;
-	display: block;
-	margin-bottom: 10px;
-	/* отступ снизу */
-}
-
-.play-button {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	padding: 10px;
-	border-radius: 50%;
-}
-
-.project-title h3 {
-	text-align: center;
-	margin-top: 10px;
-}
-
-.project-video iframe {
-	width: 100%;
-	height: 315px;
-	/* можно изменить на свой размер */
-}
-
-.project-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/* Центрирование */
-	text-align: center;
-	padding: 10px;
-}
-
-.project-video video {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-
-.project-video .close-btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	font-size: 30px;
-	padding-top: 60px;
-	color: white;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 1000;
-}
-
-.video-player {
-	width: 90%;
-	/* Ширина плеера */
-	max-width: 1200px;
-	/* Максимальная ширина */
-	height: auto;
-	max-height: 80vh;
-	/* Максимальная высота */
-	outline: none;
-	border-radius: 8px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.project-video .close-btn {
-	position: absolute;
-	top: 15px;
-	right: 20px;
-	font-size: 32px;
-	color: white;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 1001;
-}
-
 .project-card h3 {
 	text-align: center;
 	font-family: "Roboto", sans-serif;
-	font-weight: 500;
+	font-weight: bold;
 	font-size: 1.3em;
 	color: #535151;
 	margin-top: 12px;
 	padding: 0 8px;
 	line-height: 1.4;
-	font-weight: bold;
-}
-
-.project-title h3 {
-	text-align: center;
-	margin-top: 10px;
-}
-
-.project-video iframe {
-	width: 100%;
-	height: 315px;
-	/* можно изменить на свой размер */
-}
-
-.project-card {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	/* Центрирование */
-	text-align: center;
-	padding: 10px;
-}
-
-.project-video video {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-
-.project-video .close-btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	font-size: 30px;
-	padding-top: 60px;
-	color: white;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 1000;
-}
-
-.video-player {
-	width: 90%;
-	/* Ширина плеера */
-	max-width: 1200px;
-	/* Максимальная ширина */
-	height: auto;
-	max-height: 80vh;
-	/* Максимальная высота */
-	outline: none;
-	border-radius: 8px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.project-video .close-btn {
-	position: absolute;
-	top: 15px;
-	right: 20px;
-	font-size: 32px;
-	color: white;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 1001;
 }
 
 .project-card h3 {
